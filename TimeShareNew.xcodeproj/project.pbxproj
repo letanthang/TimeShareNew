@@ -13,6 +13,7 @@
 		3B3CE8FB1DAF9C9B00EBFD1F /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3CE8FA1DAF9C9B00EBFD1F /* MessagesViewController.swift */; };
 		3B3CE8FE1DAF9C9B00EBFD1F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3CE8FC1DAF9C9B00EBFD1F /* MainInterface.storyboard */; };
 		3B3CE9001DAF9C9B00EBFD1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3CE8FF1DAF9C9B00EBFD1F /* Assets.xcassets */; };
+		3BCA20221DB0DC8300B8BC91 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA20211DB0DC8300B8BC91 /* EventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3B3CE8FD1DAF9C9B00EBFD1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		3B3CE8FF1DAF9C9B00EBFD1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B3CE9011DAF9C9B00EBFD1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BCA20211DB0DC8300B8BC91 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				3B3CE8FA1DAF9C9B00EBFD1F /* MessagesViewController.swift */,
 				3B3CE8FC1DAF9C9B00EBFD1F /* MainInterface.storyboard */,
+				3BCA20211DB0DC8300B8BC91 /* EventViewController.swift */,
 				3B3CE8FF1DAF9C9B00EBFD1F /* Assets.xcassets */,
 				3B3CE9011DAF9C9B00EBFD1F /* Info.plist */,
 			);
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B3CE8FB1DAF9C9B00EBFD1F /* MessagesViewController.swift in Sources */,
+				3BCA20221DB0DC8300B8BC91 /* EventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +409,7 @@
 				3B3CE9061DAF9C9B00EBFD1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B3CE9081DAF9C9B00EBFD1F /* Build configuration list for PBXNativeTarget "TimeShareNew" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				3B3CE90A1DAF9C9B00EBFD1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
