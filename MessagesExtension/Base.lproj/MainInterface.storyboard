@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,6 +37,75 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Thz-lv-NGT">
+            <objects>
+                <viewController id="5Dd-gk-g8t" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hA4-Re-3sS"/>
+                        <viewControllerLayoutGuide type="bottom" id="fRD-pV-RPQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6JU-HK-4Fy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jre-4G-FQa">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWu-Vi-bad">
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1md-OK-ktv">
+                                        <frame key="frameInset" minX="20" minY="20" height="216" maxX="20"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="498091038.95913601">
+                                            <!--2016-10-13 22:37:18 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="wQ2-ah-7Kf"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="l9A-VV-rRX">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlE-8e-z6g">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="HOk-Bz-RAA"/>
+                                        </constraints>
+                                        <state key="normal" title="Add a date"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqn-59-2zf">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Mzc-Aa-0AP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Save"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="n4J-tV-f2Y"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fRD-pV-RPQ" firstAttribute="top" secondItem="l9A-VV-rRX" secondAttribute="bottom" id="4Di-IS-dKo"/>
+                            <constraint firstItem="DWu-Vi-bad" firstAttribute="leading" secondItem="6JU-HK-4Fy" secondAttribute="leadingMargin" id="4my-mX-mbZ"/>
+                            <constraint firstItem="Jre-4G-FQa" firstAttribute="top" secondItem="hA4-Re-3sS" secondAttribute="bottom" constant="-20" id="50O-2D-Q2q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DWu-Vi-bad" secondAttribute="trailing" id="ZwB-PA-UnB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jre-4G-FQa" secondAttribute="trailing" id="jHr-Se-747"/>
+                            <constraint firstItem="DWu-Vi-bad" firstAttribute="top" secondItem="Jre-4G-FQa" secondAttribute="bottom" id="n14-r1-IXp"/>
+                            <constraint firstItem="l9A-VV-rRX" firstAttribute="centerX" secondItem="6JU-HK-4Fy" secondAttribute="centerX" id="nlU-90-F2Y"/>
+                            <constraint firstItem="Jre-4G-FQa" firstAttribute="leading" secondItem="6JU-HK-4Fy" secondAttribute="leadingMargin" id="oCX-if-ljc"/>
+                            <constraint firstItem="l9A-VV-rRX" firstAttribute="top" secondItem="DWu-Vi-bad" secondAttribute="bottom" id="rfu-in-I5G"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mZu-yL-GY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.79999999999995" y="160.56971514242881"/>
         </scene>
     </scenes>
 </document>
