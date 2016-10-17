@@ -33,6 +33,8 @@ class MessagesViewController: MSMessagesAppViewController {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: identifier) as? EventViewController else {
             return
         }
+        vc.delegate = self
+        vc.load(from: conversation.selectedMessage)
         
         addChildViewController(vc)
         // make child vc fill our view
@@ -50,6 +52,55 @@ class MessagesViewController: MSMessagesAppViewController {
         
     }
     
+    func createMessage(with dates: [Date], votes: [Int]) {
+        // return the extension to compact mode
+        requestPresentationStyle(.compact)
+        
+        //make sure we have a conversation to work with
+        guard let conversation = activeConversation else { return }
+        
+        var component = URLComponents()
+        var items = [URLQueryItem]()
+        
+        
+        for (index, date) in dates.enumerated() {
+            
+            let dateItem = URLQueryItem(name: "date-\(index)", value: string(from: date))
+            items.append(dateItem)
+            
+            let voteItem = URLQueryItem(name: "vote-\(index)", value: String(votes[index]))
+            items.append(voteItem)
+        }
+        
+        component.queryItems = items
+        
+        //use existing session or create new one
+        let session = conversation.selectedMessage?.session ?? MSSession()
+        
+        //create new message from session and url
+        let message = MSMessage(session: session)
+        message.url = component.url
+        
+        //create a blank, default message layout
+        let layout = MSMessageTemplateLayout()
+        message.layout = layout
+        
+        conversation.insert(message) { (error) in
+            if let error = error {
+                print(error)
+            }
+        }
+        
+    }
+    
+    func string(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        formatter.dateFormat = "yyyy-MM-dd-HH-mm"
+        
+        return formatter.string(from: date)
+    }
+    
     
     // MARK: - Conversation Handling
     
@@ -58,6 +109,10 @@ class MessagesViewController: MSMessagesAppViewController {
         // This will happen when the extension is about to present UI.
         
         // Use this method to configure the extension and restore previously stored state.
+        
+        if presentationStyle == .expanded {
+            displayEventController(conversation: conversation, identifier: "SelectDates")
+        }
     }
     
     override func didResignActive(with conversation: MSConversation) {
